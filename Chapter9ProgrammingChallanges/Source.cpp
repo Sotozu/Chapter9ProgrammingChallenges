@@ -631,4 +631,4 @@ int modeReturn(int*ptr, int SIZE) {
 	return number_amount[0];
 }
 */
-
+// complete
