@@ -2,6 +2,7 @@
 #include <string>
 #include <iomanip>
 #include <vector>
+#include <ctime>
 using namespace std;
 
 /*a
@@ -632,5 +633,313 @@ int modeReturn(int*ptr, int SIZE) {
 }
 */
 
-//complete
+//9. Median Function
+//
+//double findMedian(int*, int);
+//int main() {
+//	const int SIZE = 4;
+//
+//	int my_array[SIZE];
+//	int num;
+//
+//	cout << "Please enter 4 numbers." << endl;
+//	for (int i = 0; i < SIZE; i++) {
+//		cout << "NUMBER " << i + 1 << ": "; cin >> num;
+//		my_array[i] = num;
+//	}
+//	num = my_array[0];
+//
+//	for (int i = 0; i < SIZE; i++) {
+//		for (int j = i + 1; j < SIZE; j++) {
+//			if (my_array[j] < my_array[i]) {
+//				int container = my_array[i];
+//
+//				my_array[i] = my_array[j];
+//				my_array[j] = container;
+//			}
+//		}
+//	}
+//	cout << "------------------------------" << endl;
+//	cout << "THE MEDIAN IS: " << findMedian(my_array, SIZE);
+//	return 0; 
+//}
+//double findMedian(int* array, int SIZE) {
+//	double median;
+//	if (SIZE % 2 == 0) {
+//		median = (array[(SIZE / 2) - 1] + array[(SIZE / 2)]) / 2.0f;
+//		std::cout << array[(SIZE / 2) - 1] << std::endl;
+//		std::cout << array[(SIZE / 2)] << std::endl;
+//
+//	}
+//	else {
+//		median = array[SIZE / 2];
+//	}
+//	return median;
+//}
 
+//10. Reverse Array
+
+//int* reverseArray(int[],const int size);
+//int main() {
+//
+//	const int size = 10;
+//	int my_array[size];
+//	int num;
+//	int* backward_array;
+//	srand(time(NULL));
+//
+//	for (int i = 0; i < size; i++) {
+//		my_array[i] = rand()%10;
+//		std::cout << my_array[i] << " ";
+//	}
+//	std::cout << std::endl << std::endl;;
+//
+//	backward_array = reverseArray(my_array, size);
+//
+//	std::cout << "The array backwards:" << std::endl;
+//	for (int i = 0; i < size; i++) {
+//		std::cout << *(backward_array+i) << " ";
+//	}
+//
+//	return 0;
+//}
+//
+//
+//int* reverseArray(int my_array[], const int size) {
+//	int counter = 0;
+//
+//	int* backward_array;
+//
+//	backward_array = new int[size];
+//
+//	for (int i = size; i > 0 ; i--) {
+//		
+//		backward_array[counter] = my_array[i-1];	
+//		counter++;
+//	}
+//
+//	return backward_array;
+//}
+
+//11. Array Expander
+
+//int* expandedArray(int[],const int size);
+//
+//int main() {
+//
+//	const int size = 10;
+//	int my_array[size];
+//	int* expanded_array;
+//	srand(time(NULL));
+//
+//	for (int i = 0; i < size; i++) {
+//		my_array[i] = rand()%10;
+//		std::cout << my_array[i] << " ";
+//	}
+//	std::cout << std::endl << std::endl;;
+//
+//	expanded_array = expandedArray(my_array, size);
+//
+//	std::cout << "The array expanded:" << std::endl;
+//
+//	bool do_once = true;
+//	for (int i = 0; i < size*2; i++) {
+//		if (i == size && do_once  == true) {
+//			std::cout << "Newly added positons in the array" << std::endl;
+//			do_once = false;
+//		}
+//		std::cout << *(expanded_array+i) << std::endl;
+//	}
+//
+//	return 0;
+//}
+//
+//
+//int* expandedArray(int my_array[], const int size) {
+//
+//	int* expanded_array;
+//	int doublesize = size * 2;
+//	expanded_array = new int[doublesize];
+//
+//	for (int i = 0; i < doublesize; i++) {
+//		if (i < size) {
+//			expanded_array[i] = my_array[i];
+//
+//		}
+//		else {
+//			expanded_array[i] = 0;
+//		}
+//	}
+//
+//	return expanded_array;
+//}
+//
+
+//12. Element Shifter
+
+//int* shiftArray(int my_array[], const int size);
+//
+//
+//int main() {
+//	const int size = 10;
+//	int my_array[size];
+//	int* expanded_array;
+//	srand(time(NULL));
+//	
+//	for (int i = 0; i < size; i++) {
+//		my_array[i] = rand()%10;
+//		std::cout << my_array[i] << " ";
+//	}
+//	std::cout << std::endl << std::endl;;
+//	
+//	expanded_array = shiftArray(my_array, size);
+//	
+//	std::cout << "The array shifted:" << std::endl;
+//	
+//	bool do_once = true;
+//	for (int i = 0; i < size+1; i++) {
+//		std::cout << *(expanded_array+i) << " ";
+//	}
+//	
+//	return 0;
+//
+// }
+//
+//int* shiftArray(int my_array[], const int size) {
+//	int* shift_one_array;
+//		int new_size = size + 1;
+//		shift_one_array = new int[new_size];
+//
+//		shift_one_array[0] = 0;
+//	
+//		for (int i = 1; i < new_size; i++) {
+//			shift_one_array[i] = my_array[i-1];
+//		}
+//	
+//		return shift_one_array;
+//}
+
+//13.Movie Statistics
+//int modeReturn(int*, int);
+//double findMedian(int*, int);
+//
+//int main() {
+//	int size;
+//	int mode;
+//	double median;
+//	std::cout << "How many students were surveyed?" << std::endl;
+//	std::cout << "NUMBER OF STUDENTS: "; std::cin >> size;
+//
+//	int* my_array = new int[size];
+//	
+//	std::cout << endl;
+//	std::cout << "How many movies did each student watch?" << std::endl;
+//	int movie_num;
+//	for (int i = 0; i < size; i++) {
+//		do {
+//			std::cout << "STUDENT " << i + 1 << ": "; std::cin >> movie_num;
+//			if (movie_num < 0) {
+//				std::cout << "ERROR: PLEASE ENTER A NON NEGATIVE NUMBER." << std::endl;
+//			}
+//		} while (movie_num < 0);
+//		my_array[i] = movie_num;
+//	}
+//
+//	mode = modeReturn(my_array, size);
+//	median = findMedian(my_array, size);
+//	if (mode == -1) {
+//		cout << "The data set does not have a mode.\n";
+//	}
+//	else {
+//		std::cout << "THE MODE IS: " << mode << std::endl;
+//	}
+//	std::cout << "THE MEDIAN IS: " << median << std::endl;
+// 
+//	return 0;
+//}
+//
+//int modeReturn(int* ptr, int SIZE) {
+//	vector<int> number_amount;
+//	vector<int> unique_number;
+//	int counter;
+//	int test_number;
+//	int mode;
+//	
+//	
+//
+//	unique_number.push_back(*(ptr + 0));
+//
+//	bool unique;
+//
+//	for (int i = 1; i < SIZE; i++) { //will iterate through all values in the *ptr array
+//
+//		unique = true;
+//
+//		test_number = *(ptr + i); //The test_number will be set to the next number in the array for each iteration
+//
+//		for (int j = 0; j < unique_number.size(); j++) { //Will iterate through each number in the vector. WILL GROW EVERYTIME A UNIQUE NUMBER IS ADDED
+//
+//			if (test_number == unique_number[j]) { //If the test_number is equal to a number in the vecotor then the test_number is NOT unique
+//				unique = false;
+//			}
+//		}
+//		if (unique == true) { // Once the test_number is determined to be unique execute this
+//
+//			unique_number.push_back(test_number); //Add the uniuqe test_number to the vector
+//		}
+//	}
+//
+//	for (int i = 0; i < unique_number.size(); i++) {
+//		std::cout << unique_number[i] << " ";
+//	}
+//
+//
+//	for (int i = 0; i < unique_number.size(); i++) { //Will iterate through each value in the unique_numbers vector
+//		counter = 0;
+//		for (int j = 0; j < SIZE; j++) { //Will iterate through each value in the ptr array
+//
+//			if (unique_number[i] == *(ptr + j)) { //If the value of unique_number[i] is equal to the value found in ptr array position j then execute
+//				counter++;
+//			}
+//		}
+//
+//		number_amount.push_back(counter);
+//	}
+//	int maxIndex = 0,
+//	times_number_appears_max = number_amount[0];
+//	mode = 0;
+//
+//
+//		within the list of times a number appears it finds the one that appeared the most (the greatest number)
+//		for (int i = 1; i < number_amount.size(); i++) {
+//			if (times_number_appears_max < number_amount[i]) {
+//				times_number_appears_max = number_amount[i];
+//				maxIndex = i;
+//			}
+//		}
+//		Now we run throug the list again and try to find if it repeats. IF IT DOES THEN WE DONT HAVE A MODE
+//		for (int i = 0; i < number_amount.size(); i++) {
+//			Will compare all numbers except it's own by skipping it's index position
+//			if (times_number_appears_max == number_amount[i] && i != maxIndex) {
+//				return -1;
+//			}
+//		}
+//
+//		mode = unique_number[maxIndex];
+//		return mode;
+//
+//}
+//
+//double findMedian(int* array, int SIZE) {
+//	double median;
+//	if (SIZE % 2 == 0) {
+//		median = (array[(SIZE / 2)-1] + array[(SIZE / 2)]) / 2.0f;
+//		std::cout << array[(SIZE / 2)-1] << std::endl;
+//		std::cout << array[(SIZE / 2)] << std::endl;
+//
+//	}
+//	else {
+//		median = array[SIZE / 2];
+//	}
+//	return median;
+//}
